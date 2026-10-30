@@ -5,19 +5,12 @@ public class Dosen extends Pegawai {
         System.out.println("Ini constructor class Dosen");
     }
 
-    public Dosen(String nip, String nama, double gaji, String nidn) {
-        super(nip, nama, gaji);
-        this.nidn = nidn;
-    }
-
-    @Override
-    public String getInfo() {
-        return "NIDN    : " + this.nidn + "\n";
-    }
-
     public String getAllInfo() {
-        String info = super.getInfo();
-        info += this.getInfo();
-        return info; 
+        String info = "";
+        info += "NIP     : " + super.nip + "\n";
+        info += "Nama    : " + super.nama + "\n";
+        info += "Gaji    : " + super.gaji + "\n";
+        info += "NIDN    : " + super.nidn + "\n"; // <--- Baris ini akan ERROR
+        return info;
     }
 }
